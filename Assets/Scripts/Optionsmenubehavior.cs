@@ -8,16 +8,21 @@ using System.Linq;
 
 public class Optionsmenubehavior : MonoBehaviour
 {
-    [SerializeField]
-    GameObject menu;
-    [SerializeField]
-    GameObject optionsmenu;
+ 
+    public GameObject menu;
+    
+    public GameObject optionsmenu;
 
     public Dropdown resolutionsdropdown;
     Resolution[] resolutions;
     // Start is called before the first frame update
+    public Toggle fullscreentoggle;
+
     void Start()
     {
+        //checks to see if game is in fullscreen or not
+        fullscreentoggle.isOn = Screen.fullScreen;
+
         //gets the available resoultions for the device
         resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
         //stores the resoultion options
