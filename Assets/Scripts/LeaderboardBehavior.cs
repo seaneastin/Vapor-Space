@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class quitbehavior : MonoBehaviour
+using System.IO;
+public class LeaderboardBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,10 +14,5 @@ public class quitbehavior : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void quit()
-    {
-        Application.Quit();
     }
 }
