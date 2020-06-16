@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RubiksBombBehavior : MonoBehaviour
+public class EnemyBehavior : MonoBehaviour
 {
-    public 
     // Start is called before the first frame update
     void Start()
     {
@@ -16,4 +15,10 @@ public class RubiksBombBehavior : MonoBehaviour
     {
         
     }
+
+    private void kill()
+    {
+        Object.Destroy(gameObject);
+    }
+        
 }

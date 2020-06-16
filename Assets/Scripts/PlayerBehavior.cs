@@ -15,7 +15,10 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("space"))
+        {
+            usepowerup();
+        }
     }
 
     public void usepowerup()
@@ -26,6 +29,11 @@ public class PlayerBehavior : MonoBehaviour
             Debug.Log("you have no powerup");
             return;
 
+        }
+        else
+        {
+            Instantiate(currentpowerup, transform.position, transform.rotation);
+            currentpowerup = null;
         }
     }
 
