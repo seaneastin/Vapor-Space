@@ -2968,8 +2968,6 @@ GameObject:
   - component: {fileID: 1576118167}
   - component: {fileID: 1576118166}
   - component: {fileID: 1576118170}
-  - component: {fileID: 1576118172}
-  - component: {fileID: 1576118171}
   m_Layer: 5
   m_Name: Main menu
   m_TagString: Untagged
@@ -3080,30 +3078,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 1576118165}
   optionsmenu: {fileID: 476682466}
---- !u!114 &1576118171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576118165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb5aced313e9f564fbc246b7e5fb570f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1576118172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576118165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c354ec3005e2601409bae958c419fa06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1587039305
 GameObject:
   m_ObjectHideFlags: 0
@@ -3491,7 +3465,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
