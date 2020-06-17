@@ -5,22 +5,31 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class EnemyBehavior : MonoBehaviour
 {
-    [SerializeField]
     public CharacterController controller;
     public float movementSpeed;
     public float movementRange;
+    public GameObject projectile;
+    public float shotTime;
+    public float shotSpeed;
+
+    public int health;
+
+    public int spawnScore;
+
+    private float shotInterval;
 
     private bool positiveXDirection = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        shotInterval = shotTime;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //enemy movement
         if (transform.position.x >= movementRange || transform.position.x <= -(movementRange))
         {
             positiveXDirection = !positiveXDirection;
@@ -40,5 +49,27 @@ public class EnemyBehavior : MonoBehaviour
         }
 
         controller.Move(movementDirection * Time.deltaTime);
+
+        shotInterval--;
+        if (shotInterval == 0)
+        {
+            shotInterval = shotTime;
+            ShootBullet();
+        }
+    }
+
+    void ShootBullet()
+    {
+        GameObject shot = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
+        shot.GetComponent<Rigidbody>().AddForce(-(transform.up) * shotSpeed, ForceMode.Force);
+        Debug.Log("Shot should move forward");
+    }
+
+    public void Die()
+    {
+        if (health <= 0)
+        {
+            Destroy(this);
+        }
     }
 }
