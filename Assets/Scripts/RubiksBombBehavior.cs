@@ -8,7 +8,13 @@ public class RubiksBombBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject[] enemies;
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies )
+        {
+            Debug.LogWarning("destroy enemies is not implemented");
+        }
     }  
 
     // Update is called once per frame
@@ -21,14 +27,5 @@ public class RubiksBombBehavior : MonoBehaviour
 
         TimeToDestroyObject -= 1;
         
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            Debug.Log("is an enemy");
-            other.SendMessage("kill");
-        }
     }
 }
