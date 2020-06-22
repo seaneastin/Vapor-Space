@@ -7,7 +7,7 @@ public class Powerup : MonoBehaviour
 {
     public string powerupname;
     public int cost;
-    public string decription;
+    public GameObject description;
     public GameObject item;
 
     
@@ -23,4 +23,6 @@ public class Powerup : MonoBehaviour
     {
         
     }
+
+    
 }
