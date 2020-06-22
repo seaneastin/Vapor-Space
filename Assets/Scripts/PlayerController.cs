@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject bulletPrefab;
+    public float speed = 50.0f;
+    public Rigidbody2D rb;
+    private Vector2 screenBounds;
 
+    public GameObject projectile;
+    public float shotSpeed;
     
     
     // Start is called before the first frame update
     void Start()
     {
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+
         if (tag == "MainShip")
             transform.position = new Vector3(0.0f, -8.0f, 0.0f);
         else if (tag == "RightShip")
@@ -43,6 +51,12 @@ public class PlayerController : MonoBehaviour
 
             //Move agent to target point
             transform.position = new Vector3(targetPoint.x, -8.0f, 0.0f);
+
+            if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Spacebar"))
+            {
+                GameObject shot = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
+                shot.GetComponent<Rigidbody>().AddForce((transform.up) * shotSpeed, ForceMode.Force);
+            }
         }
         else if(tag == "RightShip")
         {
