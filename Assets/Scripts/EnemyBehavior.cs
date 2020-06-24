@@ -29,6 +29,12 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //check health to make sure they're alive
+        if (health <= 0)
+        {
+            Destroy(this);
+        }
+
         //enemy movement
         if (transform.position.x >= movementRange || transform.position.x <= -(movementRange))
         {
@@ -67,9 +73,6 @@ public class EnemyBehavior : MonoBehaviour
 
     public void Die()
     {
-        if (health <= 0)
-        {
-            Destroy(this);
-        }
+        
     }
 }
