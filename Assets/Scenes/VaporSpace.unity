@@ -193,6 +193,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: LeftShip
       objectReference: {fileID: 0}
+    - target: {fileID: 333288714810697270, guid: 294c922763fbb2f4ebab95f9568c779d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 294c922763fbb2f4ebab95f9568c779d, type: 3}
 --- !u!1 &562730424
@@ -358,6 +363,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: TopShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 333288714810697270, guid: 294c922763fbb2f4ebab95f9568c779d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 294c922763fbb2f4ebab95f9568c779d, type: 3}
@@ -547,6 +557,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: RightShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 333288714810697270, guid: 294c922763fbb2f4ebab95f9568c779d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 294c922763fbb2f4ebab95f9568c779d, type: 3}
