@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ public class EnemyBehavior : MonoBehaviour
     public float shotTime;
     public float shotSpeed;
 
+    public int PointsToAddToPlayer;
+    public PlayerBehavior player;
     public int health;
 
     public int spawnScore;
@@ -23,6 +26,7 @@ public class EnemyBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("MainShip").GetComponent<PlayerBehavior>();
         shotInterval = shotTime;
     }
 
@@ -32,6 +36,7 @@ public class EnemyBehavior : MonoBehaviour
         //check health to make sure they're alive
         if (health <= 0)
         {
+            player.points += PointsToAddToPlayer;
             Destroy(this);
         }
 
@@ -70,12 +75,4 @@ public class EnemyBehavior : MonoBehaviour
         shot.GetComponent<Rigidbody>().AddForce(-(transform.up) * shotSpeed, ForceMode.Force);
         Debug.Log("Shot should move forward");
     }
-<<<<<<< Updated upstream
-
-    public void Die()
-    {
-        
-    }
-=======
->>>>>>> Stashed changes
 }
