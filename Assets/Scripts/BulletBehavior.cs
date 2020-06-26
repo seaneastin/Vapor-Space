@@ -20,4 +20,17 @@ public class BulletBehavior : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Enemy" && this.tag == "PlayerBullet")
+        {
+            Destroy(this.gameObject);
+            Destroy(other.gameObject);
+        }
+        else if(other.tag == "MainShip" && this.tag == "EnemyProjectile")
+        {
+            Destroy(this.gameObject);
+            Destroy(other.gameObject);
+        }
+    }
 }
