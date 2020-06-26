@@ -8,6 +8,9 @@ TagManager:
   - RightShip
   - LeftShip
   - TopShip
+  - Enemy
+  - PlayerBullet
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
