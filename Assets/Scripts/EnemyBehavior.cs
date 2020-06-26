@@ -70,5 +70,12 @@ public class EnemyBehavior : MonoBehaviour
         shot.GetComponent<Rigidbody>().AddForce(-(transform.up) * shotSpeed, ForceMode.Force);
         Debug.Log("Shot should move forward");
     }
+<<<<<<< Updated upstream
 
+    public void Die()
+    {
+        
+    }
+=======
+>>>>>>> Stashed changes
 }
