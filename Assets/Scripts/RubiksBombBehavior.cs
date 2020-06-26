@@ -13,7 +13,9 @@ public class RubiksBombBehavior : MonoBehaviour
 
         foreach (GameObject enemy in enemies )
         {
-            Debug.LogWarning("destroy enemies is not implemented");
+            EnemyBehavior enemyBehavior;
+           enemyBehavior = enemy.GetComponent<EnemyBehavior>();
+            enemyBehavior.health = 0;
         }
     }  
 

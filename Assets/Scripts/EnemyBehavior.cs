@@ -37,7 +37,7 @@ public class EnemyBehavior : MonoBehaviour
         if (health <= 0)
         {
             player.points += PointsToAddToPlayer;
-            Destroy(this);
+            Destroy(this.gameObject);
         }
 
         //enemy movement
