@@ -12,6 +12,7 @@ public class shopmenuBehavior : MonoBehaviour
     public GameObject[] goodbyetextboxes;
     public Text cost;
     public Text Points;
+    public GameObject shopmenu;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +51,7 @@ public class shopmenuBehavior : MonoBehaviour
     {
         cleartexbox();
         goodbyetextboxes[Random.Range(0, hellotextboxes.Length)].SetActive(true);
-        
+        shopmenu.SetActive(false);
     }
 
     public void cleartexbox()

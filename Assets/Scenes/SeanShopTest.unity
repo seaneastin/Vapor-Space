@@ -1851,6 +1851,7 @@ MonoBehaviour:
   - {fileID: 371677214}
   cost: {fileID: 2039497777}
   Points: {fileID: 1256104450}
+  shopmenu: {fileID: 1795770928}
 --- !u!1 &1797965243
 GameObject:
   m_ObjectHideFlags: 0
