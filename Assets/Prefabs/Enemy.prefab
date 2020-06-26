@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9218130565109124108}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 7337811555382451512}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,5 +227,5 @@ MonoBehaviour:
   projectile: {fileID: 7337811553499105602}
   shotTime: 300
   shotSpeed: 50
-  health: 0
+  health: 1
   spawnScore: 0
