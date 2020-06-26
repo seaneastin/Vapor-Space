@@ -7,12 +7,13 @@ public class shopmenuBehavior : MonoBehaviour
 {
     //switch this to the actutal player when this is merged with master
     public PlayerBehavior Player;
-
     public GameObject[] hellotextboxes;
     public GameObject[] purchasetextboxes;
     public GameObject[] goodbyetextboxes;
     public Text cost;
     public Text Points;
+    public GameObject shopmenu;
+    public GameBehavior game;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,8 @@ public class shopmenuBehavior : MonoBehaviour
     {
         cleartexbox();
         goodbyetextboxes[Random.Range(0, hellotextboxes.Length)].SetActive(true);
+        shopmenu.SetActive(false);
+        game.startround();
     }
 
     public void cleartexbox()
@@ -71,6 +74,7 @@ public class shopmenuBehavior : MonoBehaviour
         }
 
     }
+
 
 
 }
