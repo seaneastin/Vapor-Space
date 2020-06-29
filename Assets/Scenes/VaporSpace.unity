@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1594,11 +1594,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6186440dc2be74097e1c44794cdcdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isinround: 1
   enemies: []
   spawner: {fileID: 431111804}
-  shopintervals: 3
   finishedroundmenu: {fileID: 1319316615}
+  shoptext: {fileID: 1902518396}
+  gotoshopbutton: {fileID: 1009357024}
+  UI: {fileID: 771216360}
+  isinround: 1
+  shopintervals: 3
   round: 0
 --- !u!4 &692542979
 Transform:
@@ -1648,10 +1651,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 527381952}
   game: {fileID: 692542978}
-  points: {fileID: 0}
-  lives: {fileID: 0}
-  roundnumber: {fileID: 0}
-  CurrentPowerup: {fileID: 0}
+  points: {fileID: 905395258}
+  lives: {fileID: 536537540}
+  roundnumber: {fileID: 203749549}
+  CurrentPowerup: {fileID: 589501897}
 --- !u!114 &771216362
 MonoBehaviour:
   m_ObjectHideFlags: 0
