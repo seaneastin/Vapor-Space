@@ -6,9 +6,13 @@ public class GameBehavior : MonoBehaviour
 {
     public GameObject[] enemies;
     public SpawnerBehavior spawner;
+    public GameObject finishedroundmenu;
+    public GameObject shoptext;
+    public GameObject gotoshopbutton;
+    public GameObject UI;
+    public bool isinround;
     private int roundstillshopshows;
     public int shopintervals;
-    public GameObject shopmenu;
     public int round;
     // Start is called before the first frame update
     void Start()
@@ -19,26 +23,46 @@ public class GameBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //replace this line with something more effiencent
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (spawner.spawnScoreTotal >= spawner.maxSpawnScoreTotal && enemies.Length <= 0)
+        if (isinround == true)
         {
-            roundstillshopshows -= 1;
-            round++;
-            if (roundstillshopshows <= 0)
+            //replace this line with something more effiencent
+            enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            if (spawner.spawnScoreTotal >= spawner.maxSpawnScoreTotal && enemies.Length <= 0)
             {
-                shopmenu.SetActive(true);
-            }
-            else
-            {
-                startround();
-            }
+                isinround = false;
+                roundstillshopshows -= 1;
+                round++;
+                GameObject[] enemybullets;
+                enemybullets = GameObject.FindGameObjectsWithTag("EnemyProjectile");
+                UI.SetActive(false);
+                foreach (GameObject projectile in enemybullets)
+                {
+                    GameObject.Destroy(projectile);
+                }
+                if (roundstillshopshows <= 0)
+                {
+                    finishedroundmenu.SetActive(true);
+                    shoptext.SetActive(true);
+                    gotoshopbutton.SetActive(true);
+                    roundstillshopshows = shopintervals;
+                }
+                else
+                {
+                    finishedroundmenu.SetActive(true);
+                    shoptext.SetActive(false);
+                    gotoshopbutton.SetActive(false);
 
+                }
+
+            }
         }
+       
     }
 
     public void startround()
     {
+        UI.SetActive(true);
+        isinround = true;
         spawner.spawnScoreTotal = 0;
     }
 }

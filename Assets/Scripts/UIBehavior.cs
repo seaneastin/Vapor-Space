@@ -10,6 +10,7 @@ public class UIBehavior : MonoBehaviour
     public Text points;
     public Text lives;
     public Text roundnumber;
+    public Text CurrentPowerup;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +23,14 @@ public class UIBehavior : MonoBehaviour
         roundnumber.text = "current round: " + game.round;
         points.text = "Points: " + player.points;
         lives.text = "Lives: " + player.lives;
+        if (player.currentpowerup != null)
+        {
+            CurrentPowerup.text = "Powerup: " + player.currentpowerup.name;
+        }
+        else
+        {
+            CurrentPowerup.text = "Powerup: none";
+        }
+
     }
 }
