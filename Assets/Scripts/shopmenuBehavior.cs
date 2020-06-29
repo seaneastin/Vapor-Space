@@ -14,12 +14,14 @@ public class shopmenuBehavior : MonoBehaviour
     public Text Points;
     public GameObject shopmenu;
     public GameBehavior game;
+    public GameObject buyconfirmation;
+    public Text buyconfirmationtextbox;
+    public Button buybutton;
 
     // Start is called before the first frame update
     void Start()
     {
         hellotextboxes[Random.Range(0, hellotextboxes.Length)].SetActive(true);
-        
     }
 
     // Update is called once per frame
@@ -34,7 +36,14 @@ public class shopmenuBehavior : MonoBehaviour
         cost.text = "Cost: " + powerup.cost;
     }
 
-    public void buy (Powerup powerup)
+    public void showconfirmationmenu(Powerup powerup)
+    {
+        buyconfirmation.SetActive(true);
+        buyconfirmationtextbox.text = "are you sure you want to buy " + powerup.name + " for " + powerup.cost + " points";
+        buybutton.onClick.AddListener(() => buy(powerup));
+}
+
+    public void buy(Powerup powerup)
     {
         cleartexbox();
         if (Player.points > powerup.cost)
@@ -44,6 +53,11 @@ public class shopmenuBehavior : MonoBehaviour
             Player.currentpowerup = powerup.item;
 
             purchasetextboxes[Random.Range(0, hellotextboxes.Length)].SetActive(true);
+            buyconfirmation.SetActive(false);
+        }
+        else
+        {
+            buyconfirmationtextbox.text = "you dont have enough points to buy this";
         }
     }
 

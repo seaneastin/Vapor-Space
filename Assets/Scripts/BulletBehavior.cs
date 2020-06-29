@@ -31,7 +31,7 @@ public class BulletBehavior : MonoBehaviour
         else if(other.tag == "MainShip" && this.tag == "EnemyProjectile")
         {
             Destroy(this.gameObject);
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
     }
 }
