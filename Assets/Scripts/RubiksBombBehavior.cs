@@ -22,12 +22,7 @@ public class RubiksBombBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TimeToDestroyObject <= 0)
-        {
-            Object.Destroy(gameObject);
-        }
-
-        TimeToDestroyObject -= 1;
+        Object.Destroy(gameObject, TimeToDestroyObject);
         
     }
 }
