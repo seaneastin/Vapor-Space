@@ -240,7 +240,7 @@ MonoBehaviour:
   movementRange: 4
   projectile: {fileID: 4471774385135185484}
   shotTime: 300
-  shotSpeed: 50
+  shotSpeed: 450
   PointsToAddToPlayer: 10
   player: {fileID: 0}
   health: 1
