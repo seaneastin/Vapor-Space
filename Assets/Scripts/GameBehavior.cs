@@ -18,6 +18,7 @@ public class GameBehavior : MonoBehaviour
     void Start()
     { 
         roundstillshopshows = shopintervals;
+        round = 1;
     }
 
     // Update is called once per frame
@@ -33,11 +34,17 @@ public class GameBehavior : MonoBehaviour
                 roundstillshopshows -= 1;
                 round++;
                 GameObject[] enemybullets;
+                GameObject[] playerBullets;
+                playerBullets = GameObject.FindGameObjectsWithTag("PlayerBullet");
                 enemybullets = GameObject.FindGameObjectsWithTag("EnemyProjectile");
                 UI.SetActive(false);
                 foreach (GameObject projectile in enemybullets)
                 {
                     GameObject.Destroy(projectile);
+                }
+                foreach(GameObject bullet in playerBullets)
+                {
+                    GameObject.Destroy(bullet);
                 }
                 if (roundstillshopshows <= 0)
                 {
