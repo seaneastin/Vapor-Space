@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ public class EnemyBehavior : MonoBehaviour
     public float shotTime;
     public float shotSpeed;
 
+    public int PointsToAddToPlayer;
+    public PlayerBehavior player;
     public int health;
 
     private float shotInterval;
@@ -21,6 +24,7 @@ public class EnemyBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("MainShip").GetComponent<PlayerBehavior>();
         shotInterval = shotTime;
     }
 
@@ -30,7 +34,8 @@ public class EnemyBehavior : MonoBehaviour
         //check health to make sure they're alive
         if (health <= 0)
         {
-            Destroy(this);
+            player.points += PointsToAddToPlayer;
+            Destroy(this.gameObject);
         }
 
         //enemy movement

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBehavior : MonoBehaviour
 {
     public int points;
+    public int lives;
     public GameObject currentpowerup;
     // Start is called before the first frame update
     void Start()
