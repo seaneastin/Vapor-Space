@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 public class shopmenuBehavior : MonoBehaviour
@@ -17,10 +18,13 @@ public class shopmenuBehavior : MonoBehaviour
     public GameObject buyconfirmation;
     public Text buyconfirmationtextbox;
     public Button buybutton;
-
+    public GameObject Head;
+    Animator head_animation;
+    bool isleavingshop = false;
     // Start is called before the first frame update
     void Start()
     {
+        head_animation = Head.GetComponent<Animator>();
         hellotextboxes[Random.Range(0, hellotextboxes.Length)].SetActive(true);
     }
 
@@ -28,7 +32,23 @@ public class shopmenuBehavior : MonoBehaviour
     void Update()
     {
         Points.text = "Points: " + Player.points;
+        //activates once leave shop animation is playing
+        if  (head_animation.GetCurrentAnimatorStateInfo(0).IsName("Goodbye"))
+        {
+            if (isleavingshop == true)
+            {
+                isleavingshop = false;
+                cleartexbox();
+                goodbyetextboxes[Random.Range(0, hellotextboxes.Length)].SetActive(true);
+            }
+            if (head_animation.IsInTransition(0))
+            {
+                game.startround();
+                shopmenu.SetActive(false);
+                Head.SetActive(false);
 
+            }
+        }
     }
 
     public void showcost(Powerup powerup)
@@ -51,7 +71,7 @@ public class shopmenuBehavior : MonoBehaviour
             powerup.description.SetActive(false);
             Player.points -= powerup.cost;
             Player.currentpowerup = powerup.item;
-
+            head_animation.SetTrigger("Purchase");
             purchasetextboxes[Random.Range(0, hellotextboxes.Length)].SetActive(true);
             buyconfirmation.SetActive(false);
         }
@@ -64,10 +84,8 @@ public class shopmenuBehavior : MonoBehaviour
 
     public void leaveshop()
     {
-        cleartexbox();
-        goodbyetextboxes[Random.Range(0, hellotextboxes.Length)].SetActive(true);
-        shopmenu.SetActive(false);
-        game.startround();
+        isleavingshop = true;
+        head_animation.SetTrigger("Goodbye");
     }
 
     public void cleartexbox()
@@ -87,6 +105,11 @@ public class shopmenuBehavior : MonoBehaviour
             goodbyetextbox.SetActive(false);
         }
 
+    }
+
+    public void shopkeeperdesciptionanim()
+    {
+        head_animation.SetTrigger("Explanation");
     }
 
 
