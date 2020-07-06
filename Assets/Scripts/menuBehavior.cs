@@ -5,25 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class menuBehavior : MonoBehaviour
 {
-    [SerializeField]
-    GameObject menu;
-    [SerializeField]
-    GameObject optionsmenu;
+    public GameObject menu;
+    public GameObject optionsmenu;
+    public GameObject Credits;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void showoptionsmenu()
     {
         optionsmenu.SetActive(true);
+        menu.SetActive(false);
+    }
+
+    public void showcreditsmenu()
+    {
+        Credits.SetActive(true);
         menu.SetActive(false);
     }
 
