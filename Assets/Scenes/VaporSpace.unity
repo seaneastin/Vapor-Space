@@ -203,6 +203,11 @@ PrefabInstance:
       propertyPath: shotSpeed
       value: 900
       objectReference: {fileID: 0}
+    - target: {fileID: 333288714810697271, guid: 46a05edf604e79b41b818d9155d9030e,
+        type: 3}
+      propertyPath: game
+      value: 
+      objectReference: {fileID: 692542978}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46a05edf604e79b41b818d9155d9030e, type: 3}
 --- !u!1 &38627703
@@ -992,6 +997,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 333288714810697269, guid: 46a05edf604e79b41b818d9155d9030e,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 333288714810697270, guid: 46a05edf604e79b41b818d9155d9030e,
         type: 3}
@@ -3900,6 +3910,11 @@ PrefabInstance:
       propertyPath: shotSpeed
       value: 900
       objectReference: {fileID: 0}
+    - target: {fileID: 333288714810697271, guid: 46a05edf604e79b41b818d9155d9030e,
+        type: 3}
+      propertyPath: game
+      value: 
+      objectReference: {fileID: 692542978}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46a05edf604e79b41b818d9155d9030e, type: 3}
 --- !u!1 &1902518396
