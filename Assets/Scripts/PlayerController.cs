@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
 
     public GameObject projectile;
     public float shotSpeed = 50;
+
+    public CharacterController controller;
+    public float speed;
     
     
     // Start is called before the first frame update
@@ -27,6 +30,8 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(-17.0f, 0.0f, 0.0f);
         else if (tag == "TopShip")
             transform.position = new Vector3(0.0f, 10.0f, 0.0f);
+
+        
     }
 
     // Update is called once per frame
@@ -57,7 +62,16 @@ public class PlayerController : MonoBehaviour
                 Vector3 targetPoint = mouseRay.GetPoint(rayDistance);
 
                 //Move agent to target point
-                transform.position = new Vector3(targetPoint.x, -8.0f, 0.0f);
+                //transform.position = new Vector3(targetPoint.x, -8.0f, 0.0f);
+                Vector3 direction = targetPoint - transform.position;
+
+                direction.Normalize();
+
+                direction.y = 0.0f;
+                direction.z = 0.0f;
+
+                direction *= speed;
+                controller.Move(direction * Time.deltaTime);               
 
                 //Shoot bullets
                 if (Input.GetMouseButton(0) && cooldown <= 0)
