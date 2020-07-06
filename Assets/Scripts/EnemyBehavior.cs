@@ -14,8 +14,6 @@ public class EnemyBehavior : MonoBehaviour
 
     public int health;
 
-    public int spawnScore;
-
     private float shotInterval;
 
     private bool positiveXDirection = true;
