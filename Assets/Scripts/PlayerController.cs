@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
                 direction.Normalize();
 
-                direction.y = 0.0f;
+                //direction.y = 0.0f;
                 direction.z = 0.0f;
 
                 direction *= speed;
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
                 Ray mouseRay = Camera.main.ScreenPointToRay(mousePos);
 
                 //Create a plane that faces up at the same position as the player
-                Plane playerPosPlane = new Plane(Vector3.up, transform.position);
+                Plane playerPosPlane = new Plane(Vector3.forward, transform.position);
 
                 //How far along the ray does the intersection with the plan occur?
                 float rayDistance = 0;
@@ -100,7 +100,16 @@ public class PlayerController : MonoBehaviour
                 Vector3 targetPoint = mouseRay.GetPoint(rayDistance);
 
                 //Move agent to target point
-                transform.position = new Vector3(17.0f, targetPoint.y, 0.0f);
+                //transform.position = new Vector3(17.0f, targetPoint.y, 0.0f);
+                Vector3 direction = targetPoint - transform.position;
+
+                direction.Normalize();
+
+                direction.x = 0.0f;
+                direction.z = 0.0f;
+
+                direction *= speed;
+                controller.Move(direction * Time.deltaTime);
 
                 //Shoot bullets
                 if (Input.GetMouseButton(0) && cooldown <= 0)
@@ -119,7 +128,7 @@ public class PlayerController : MonoBehaviour
                 Ray mouseRay = Camera.main.ScreenPointToRay(mousePos);
 
                 //Create a plane that faces up at the same position as the player
-                Plane playerPosPlane = new Plane(Vector3.up, transform.position);
+                Plane playerPosPlane = new Plane(Vector3.forward, transform.position);
 
                 //How far along the ray does the intersection with the plan occur?
                 float rayDistance = 0;
@@ -129,7 +138,16 @@ public class PlayerController : MonoBehaviour
                 Vector3 targetPoint = mouseRay.GetPoint(rayDistance);
 
                 //Move agent to target point
-                transform.position = new Vector3(-17.0f, targetPoint.y, 0.0f);
+                //transform.position = new Vector3(-17.0f, targetPoint.y, 0.0f);
+                Vector3 direction = targetPoint - transform.position;
+
+                direction.Normalize();
+
+                direction.x = 0.0f;
+                direction.z = 0.0f;
+
+                direction *= speed;
+                controller.Move(direction * Time.deltaTime);
 
                 //Shoot bullets
                 if (Input.GetMouseButton(0) && cooldown <= 0)
