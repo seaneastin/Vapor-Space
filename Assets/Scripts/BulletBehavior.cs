@@ -26,12 +26,13 @@ public class BulletBehavior : MonoBehaviour
         {
             Destroy(this.gameObject);
            EnemyBehavior enemy = other.GetComponent<EnemyBehavior>();
-            enemy.health = 0;
+            enemy.health -= 1;
         }
         else if(other.tag == "MainShip" && this.tag == "EnemyProjectile")
         {
             Destroy(this.gameObject);
-            other.gameObject.SetActive(false);
+            PlayerBehavior player = other.GetComponent<PlayerBehavior>();
+            player.health -= 1;
         }
     }
 }

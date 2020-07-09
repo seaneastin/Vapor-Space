@@ -112,6 +112,9 @@ public class shopmenuBehavior : MonoBehaviour
         head_animation.SetTrigger("Explanation");
     }
 
-
+    public void shopkeeperwelcomeanim()
+    {
+        //head_animation.SetTrigger("Welcome");
+    }
 
 }

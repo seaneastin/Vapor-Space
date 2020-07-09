@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour
 {
+    bool isplayerdead;
+    public int health;
     public int points;
     public int lives;
     public GameObject currentpowerup;
@@ -20,6 +22,15 @@ public class PlayerBehavior : MonoBehaviour
         {
             usepowerup();
         }
+        if (health <= 0)
+        {
+            this.gameObject.SetActive(false);
+            isplayerdead = true;
+            if (lives > 0)
+            {
+                lives -= 1;
+            }
+        }    
     }
 
     public void usepowerup()
