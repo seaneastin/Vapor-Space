@@ -12,6 +12,7 @@ public class UIBehavior : MonoBehaviour
     public Text roundnumber;
     public Powerup rubiksbomb;
     public Image powerupicon;
+    public Powerup Mixtape;
     public Sprite defaultitembox;
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,10 @@ public class UIBehavior : MonoBehaviour
             if (powerupname == rubiksbomb.name)
             {
                 powerupicon.sprite = rubiksbomb.hudicon;
+            }
+            if (powerupname == Mixtape.name)
+            {
+                powerupicon.sprite = Mixtape.hudicon;
             }
         }
         else

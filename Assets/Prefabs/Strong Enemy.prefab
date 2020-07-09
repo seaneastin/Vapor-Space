@@ -238,7 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
   movementSpeed: 1
-  movementRange: 4
+  movementRange: 15.03
   projectile: {fileID: 549746972491377863}
   shotTime: 200
   shotSpeed: 70

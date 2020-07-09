@@ -1498,10 +1498,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705eb550de467f241bd9c01d409d767b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 999
+  health: 1
   points: 0
   lives: 0
-  currentpowerup: {fileID: 0}
+  currentpowerup: {fileID: 3672264692123535100, guid: 2b2601251f2ba9b4e954805a886c2d98,
+    type: 3}
 --- !u!114 &527381953 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 333288714810697271, guid: 46a05edf604e79b41b818d9155d9030e,

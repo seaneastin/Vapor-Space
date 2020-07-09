@@ -10,13 +10,13 @@ public class MixtapeBehavior : MonoBehaviour
     float originalshotspeed;
     float originalfirerate;
     bool isobjectbeingdestroyed;
-    List<GameObject> playerships;
+    List<GameObject> playerships = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
         playerships.Add(GameObject.FindGameObjectWithTag("MainShip"));
         playerships.Add(GameObject.FindGameObjectWithTag("LeftShip"));
-        playerships.Add(GameObject.FindGameObjectWithTag("rightShip"));
+        playerships.Add(GameObject.FindGameObjectWithTag("RightShip"));
         PlayerController player = playerships[0].GetComponent<PlayerController>();
         originalfirerate = player.fireRate;
         originalshotspeed = player.shotSpeed;
