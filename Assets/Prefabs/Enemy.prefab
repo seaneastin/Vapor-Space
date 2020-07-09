@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9218130565109124108}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: EnemyProjectile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 7337811555382451512}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7337811555382451513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7337811553499105606}
@@ -222,12 +222,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 7337811555382451519}
-  movementSpeed: 1
+  movementSpeed: 2
   movementRange: 4
   projectile: {fileID: 7337811553499105602}
   shotTime: 300
-  shotSpeed: 450
-  PointsToAddToPlayer: 10
+  shotSpeed: 50
+  PointsToAddToPlayer: 0
   player: {fileID: 0}
   health: 1
-  spawnScore: 0

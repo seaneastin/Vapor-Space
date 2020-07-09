@@ -4,28 +4,37 @@ using UnityEngine;
 
 public class SpawnerBehavior : MonoBehaviour
 {
-    public int spawnScoreTotal;
-    public int maxSpawnScoreTotal;
+    private int spawnDelay;
+    public int spawnTimer;
+
+    public int spawnedEnemyTotal;
+    public int maxSpawnedEnemiesTotal;
 
     public GameObject[] spawnables;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnDelay = spawnTimer;
+        RandomizePosition();
     }
 
     // Update is called once per frame
     void Update()
     {
-        while (spawnScoreTotal < maxSpawnScoreTotal)
+        if (spawnDelay == 0 && spawnedEnemyTotal < maxSpawnedEnemiesTotal)
         {
-            foreach (GameObject g in spawnables)
-            {
-                Instantiate(g, new Vector3(0.0f,0.0f,0.0f), new Quaternion(0.0f,0.0f,0.0f,0.0f));
-                spawnScoreTotal++;
-            }
+            spawnDelay = spawnTimer;
+            int g = Random.Range(0, (spawnables.Length - 1));
+            Instantiate(spawnables[g], transform.position, new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
+            spawnedEnemyTotal++;
+            RandomizePosition();
         }
-        
+        spawnDelay--;
+    }
+
+    void RandomizePosition()
+    {
+        transform.position = new Vector3(Random.Range(-3.9f, -3.9f), Random.Range(-2.0f, 2.0f), 0.0f);
     }
 }
