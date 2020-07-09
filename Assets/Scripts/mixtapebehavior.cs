@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 public class mixtapebehavior : MonoBehaviour
 {
-    //List<gameobject> playerships;
+    List<GameObject> playerships;
     // Start is called before the first frame update
     void Start()
     {
-        //playerships.Add(GameObject.FindGameObjectWithTag("main"))
+        playerships.Add(GameObject.FindGameObjectWithTag("main"));
+
     }
 
     // Update is called once per frame
