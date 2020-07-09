@@ -17,9 +17,8 @@ public class EnemyBehavior : MonoBehaviour
     public PlayerBehavior player;
     public int health;
 
-    public int spawnScore;
-
     private float shotInterval;
+    private Vector3 tether;
 
     private bool positiveXDirection = true;
 
@@ -28,6 +27,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("MainShip").GetComponent<PlayerBehavior>();
         shotInterval = shotTime;
+        tether = transform.position;
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class EnemyBehavior : MonoBehaviour
         }
 
         //enemy movement
-        if (transform.position.x >= movementRange || transform.position.x <= -(movementRange))
+        if (transform.position.x >= (tether.x + movementRange) || transform.position.x <= -(tether.x + movementRange))
         {
             positiveXDirection = !positiveXDirection;
             Debug.Log("Switch direction");

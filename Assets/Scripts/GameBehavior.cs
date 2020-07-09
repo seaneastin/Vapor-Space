@@ -28,7 +28,7 @@ public class GameBehavior : MonoBehaviour
         {
             //replace this line with something more effiencent
             enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            if (spawner.spawnScoreTotal >= spawner.maxSpawnScoreTotal && enemies.Length <= 0)
+            if (spawner.spawnedEnemyTotal >= spawner.maxSpawnedEnemiesTotal && enemies.Length <= 0)
             {
                 isinround = false;
                 roundstillshopshows -= 1;
@@ -70,6 +70,6 @@ public class GameBehavior : MonoBehaviour
     {
         UI.SetActive(true);
         isinround = true;
-        spawner.spawnScoreTotal = 0;
+        spawner.spawnedEnemyTotal = 0;
     }
 }
