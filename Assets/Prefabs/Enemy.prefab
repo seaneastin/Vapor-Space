@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9218130565109124108}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,10 +223,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7337811555382451519}
   movementSpeed: 2
-  movementRange: 4
+  movementRange: 15.03
   projectile: {fileID: 7337811553499105602}
   shotTime: 300
   shotSpeed: 50
-  PointsToAddToPlayer: 0
-  player: {fileID: 0}
+  PointsToAddToPlayer: 10
   health: 1

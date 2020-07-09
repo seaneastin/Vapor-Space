@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Powerup : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Powerup : MonoBehaviour
     public int cost;
     public GameObject description;
     public GameObject item;
+    public Sprite hudicon;
 
     
 

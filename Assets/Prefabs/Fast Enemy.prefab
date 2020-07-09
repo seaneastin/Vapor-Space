@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1632982163688764471}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,6 +227,5 @@ MonoBehaviour:
   projectile: {fileID: 4471774385135185484}
   shotTime: 300
   shotSpeed: 50
-  PointsToAddToPlayer: 0
-  player: {fileID: 0}
+  PointsToAddToPlayer: 20
   health: 1

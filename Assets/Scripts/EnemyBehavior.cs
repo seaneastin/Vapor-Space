@@ -14,7 +14,7 @@ public class EnemyBehavior : MonoBehaviour
     public float shotSpeed;
 
     public int PointsToAddToPlayer;
-    public PlayerBehavior player;
+    PlayerBehavior player;
     public int health;
 
     private float shotInterval;
