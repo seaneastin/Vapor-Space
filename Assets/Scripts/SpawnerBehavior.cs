@@ -35,6 +35,6 @@ public class SpawnerBehavior : MonoBehaviour
 
     void RandomizePosition()
     {
-        transform.position = new Vector3(Random.Range(-3.9f, -3.9f), Random.Range(-2.0f, 2.0f), 0.0f);
+       transform.position = new Vector3(Random.Range(-3.9f, -3.9f), Random.Range(-2.0f, 2.0f), 0.0f);
     }
 }

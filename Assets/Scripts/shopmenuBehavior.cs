@@ -7,6 +7,7 @@ public class shopmenuBehavior : MonoBehaviour
 
 {
     //switch this to the actutal player when this is merged with master
+    public CoinBehavior coin; 
     public PlayerBehavior Player;
     public GameObject[] hellotextboxes;
     public GameObject[] purchasetextboxes;
@@ -43,6 +44,7 @@ public class shopmenuBehavior : MonoBehaviour
             }
             if (head_animation.IsInTransition(0))
             {
+                cleartexbox();
                 game.startround();
                 shopmenu.SetActive(false);
                 Head.SetActive(false);
@@ -74,6 +76,7 @@ public class shopmenuBehavior : MonoBehaviour
             head_animation.SetTrigger("Purchase");
             purchasetextboxes[Random.Range(0, hellotextboxes.Length)].SetActive(true);
             buyconfirmation.SetActive(false);
+            coin.HowMuchThePlayerWastedOnTheShop += powerup.cost;
         }
         else
         {
