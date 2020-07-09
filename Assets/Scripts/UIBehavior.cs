@@ -10,7 +10,10 @@ public class UIBehavior : MonoBehaviour
     public Text points;
     public Text lives;
     public Text roundnumber;
-    public Text CurrentPowerup;
+    public Powerup rubiksbomb;
+    public Image powerupicon;
+    public Powerup Mixtape;
+    public Sprite defaultitembox;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,17 +23,28 @@ public class UIBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        roundnumber.text = "current round: " + game.round;
-        points.text = "Points: " + player.points;
-        lives.text = "Lives: " + player.lives;
+        roundnumber.text = "Round: " + game.round;
+        points.text = player.points.ToString();
+        //lives.text = "Lives: " + player.lives;
         if (player.currentpowerup != null)
         {
-            CurrentPowerup.text = "Powerup: " + player.currentpowerup.name;
+            string powerupname = player.currentpowerup.name;
+
+            if (powerupname == rubiksbomb.name)
+            {
+                powerupicon.sprite = rubiksbomb.hudicon;
+            }
+            if (powerupname == Mixtape.name)
+            {
+                powerupicon.sprite = Mixtape.hudicon;
+            }
         }
         else
         {
-            CurrentPowerup.text = "Powerup: none";
+            powerupicon.sprite = defaultitembox;
         }
+
+        
 
     }
 }
