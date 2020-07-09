@@ -7,31 +7,34 @@ public class SpawnerBehavior : MonoBehaviour
     private int spawnDelay;
     public int spawnTimer;
 
+    public int spawnedEnemyTotal;
+    public int maxSpawnedEnemiesTotal;
+
     public GameObject[] spawnables;
 
     // Start is called before the first frame update
     void Start()
     {
         spawnDelay = spawnTimer;
+        RandomizePosition();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (spawnDelay == 0)
+        if (spawnDelay == 0 && spawnedEnemyTotal < maxSpawnedEnemiesTotal)
         {
-            for (int g = 0; g > spawnables.Length; g++)
-            {
-                spawnDelay = spawnTimer;
-                spawnables[g].SetActive(true);
-                Instantiate(spawnables[g], new Vector3(0.0f, 0.0f, 0.0f), new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
-            }
+            spawnDelay = spawnTimer;
+            int g = Random.Range(0, (spawnables.Length - 1));
+            Instantiate(spawnables[g], transform.position, new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
+            spawnedEnemyTotal++;
+            RandomizePosition();
         }
         spawnDelay--;
     }
 
     void RandomizePosition()
     {
-
+        transform.position = new Vector3(Random.Range(-3.9f, -3.9f), Random.Range(-2.0f, 2.0f), 0.0f);
     }
 }
