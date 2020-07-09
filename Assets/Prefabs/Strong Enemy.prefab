@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 588329336289538017}
   - component: {fileID: 1027375360789862233}
   - component: {fileID: 6917041471646530859}
+  - component: {fileID: 4872052541759781817}
   m_Layer: 0
   m_Name: Strong Enemy
   m_TagString: Enemy
@@ -243,3 +244,16 @@ MonoBehaviour:
   shotSpeed: 70
   PointsToAddToPlayer: 30
   health: 3
+--- !u!65 &4872052541759781817
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071774537503839792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 1, z: 0.99999994}
+  m_Center: {x: 0, y: 0, z: 0}
