@@ -10,20 +10,12 @@ public class PlayerController : MonoBehaviour
     public GameBehavior game;
     public GameObject projectile;
     public float shotSpeed = 50;
-    public float fireRate = 3.0f;
-
+    public float fireRate = 3.0f;    
 
     // Start is called before the first frame update
     void Start()
     {
-        cooldown = fireRate;
-
-        //if (tag == "MainShip")
-        //    transform.position = new Vector3(0.0f, -8.0f, 0.0f);
-        //else if (tag == "RightShip")
-        //    transform.position = new Vector3(17.0f, 0.0f, 0.0f);
-        //else if (tag == "LeftShip")
-        //    transform.position = new Vector3(-17.0f, 0.0f, 0.0f);
+        cooldown = fireRate;        
     }
 
     // Update is called once per frame
@@ -40,8 +32,9 @@ public class PlayerController : MonoBehaviour
                 //Shoot bullets
                 if (Input.GetMouseButton(0) && cooldown <= 0)
                 {
+                    Vector3 force = new Vector3(0.0f, transform.up.y + 1, 0.0f);
                     GameObject shot = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
-                    shot.GetComponent<Rigidbody>().AddForce((transform.up) * shotSpeed, ForceMode.Force);
+                    shot.GetComponent<Rigidbody>().AddForce(force * shotSpeed, ForceMode.Force);
                     cooldown = fireRate;
                 }
             }
@@ -50,8 +43,9 @@ public class PlayerController : MonoBehaviour
                 //Shoot bullets
                 if (Input.GetMouseButton(0) && cooldown <= 0)
                 {
+                    Vector3 force = new Vector3(transform.up.x - 1, 0.0f, 0.0f);
                     GameObject shot = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
-                    shot.GetComponent<Rigidbody>().AddForce(-(transform.right) * shotSpeed, ForceMode.Force);
+                    shot.GetComponent<Rigidbody>().AddForce(force * shotSpeed, ForceMode.Force);
                     cooldown = fireRate;
                 }
             }
@@ -60,8 +54,9 @@ public class PlayerController : MonoBehaviour
                 //Shoot bullets
                 if (Input.GetMouseButton(0) && cooldown <= 0)
                 {
+                    Vector3 force = new Vector3(transform.up.x + 1, 0.0f, 0.0f);
                     GameObject shot = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
-                    shot.GetComponent<Rigidbody>().AddForce((transform.right) * shotSpeed, ForceMode.Force);
+                    shot.GetComponent<Rigidbody>().AddForce(force * shotSpeed, ForceMode.Force);
                     cooldown = fireRate;
                 }
             }
