@@ -30,7 +30,10 @@ public class SpawnerBehavior : MonoBehaviour
             spawnedEnemyTotal++;
             RandomizePosition();
         }
-        spawnDelay--;
+        if(spawnDelay != 0)
+        {
+            spawnDelay--;
+        }        
     }
 
     void RandomizePosition()
