@@ -25,7 +25,7 @@ public class UIBehavior : MonoBehaviour
     {
         roundnumber.text = "Round: " + game.round;
         points.text = player.points.ToString();
-        //lives.text = "Lives: " + player.lives;
+        lives.text = player.lives.ToString();
         if (player.currentpowerup != null)
         {
             string powerupname = player.currentpowerup.name;
