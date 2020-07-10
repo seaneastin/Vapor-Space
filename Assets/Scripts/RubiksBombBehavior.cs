@@ -15,7 +15,7 @@ public class RubiksBombBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        characterController = this.GetComponent<CharacterController>();
+        characterController = GetComponent<CharacterController>();
         rubiksbombsolveanim = rubiksbombsolve.GetComponent<Animator>();
         rubiksbombexplodeanim = rubiksbombexplode.GetComponent<Animator>();
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
