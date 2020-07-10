@@ -26,7 +26,7 @@ public class SpawnerBehavior : MonoBehaviour
         {
             spawnDelay = spawnTimer;
             int g = Random.Range(0, (spawnables.Length - 1));
-            Instantiate(spawnables[g], transform.position, new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
+            Instantiate(spawnables[g], transform.position, new Quaternion(90.0f, 0.0f, 0.0f, -90.0f));
             spawnedEnemyTotal++;
             RandomizePosition();
         }
