@@ -39,7 +39,7 @@ public class CrossHairMovement : MonoBehaviour
         //Move agent to target point
         //transform.position = new Vector3(targetPoint.x, -8.0f, 0.0f);
         Vector3 direction = targetPoint - transform.position;
-        if(direction.magnitude <= 0.5)
+        if(direction.magnitude <= 0.25)
         {
             return;
         }

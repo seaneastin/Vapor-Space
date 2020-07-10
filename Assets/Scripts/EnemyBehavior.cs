@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 [RequireComponent(typeof(CharacterController))]
 public class EnemyBehavior : MonoBehaviour
@@ -21,6 +22,8 @@ public class EnemyBehavior : MonoBehaviour
     private Vector3 tether;
 
     private bool positiveXDirection = true;
+    private Animator usbAttack;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,7 @@ public class EnemyBehavior : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("MainShip").GetComponent<PlayerBehavior>();
         shotInterval = shotTime;
         tether = transform.position;
+        usbAttack = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -71,8 +75,10 @@ public class EnemyBehavior : MonoBehaviour
 
     void ShootBullet()
     {
+        usbAttack.SetTrigger("attack");
         GameObject shot = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
-        shot.GetComponent<Rigidbody>().AddForce(-(transform.up) * shotSpeed, ForceMode.Force);
+       
+        shot.GetComponent<Rigidbody>().AddForce(-(transform.forward) * shotSpeed, ForceMode.Force);
         Debug.Log("Shot should move forward");
     }
 }
