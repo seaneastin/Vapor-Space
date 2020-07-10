@@ -38,6 +38,12 @@ public class SpawnerBehavior : MonoBehaviour
 
     void RandomizePosition()
     {
-       transform.position = new Vector3(Random.Range(-3.9f, -3.9f), Random.Range(-2.0f, 2.0f), 0.0f);
+        Vector3 oldSpawn = transform.position;
+        transform.position = new Vector3(Random.Range(-3.9f, 3.9f), Random.Range(2.0f, 6.0f), 0.0f);
+
+        if ((oldSpawn - transform.position).magnitude <= 3)
+        {
+            RandomizePosition();
+        }
     }
 }

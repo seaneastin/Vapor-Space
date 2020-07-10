@@ -237,9 +237,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7337811555382451519}
   movementSpeed: 2
-  movementRange: 15.03
+  movementRange: 6
   projectile: {fileID: 7337811553499105602}
   shotTime: 300
-  shotSpeed: 50
+  shotSpeed: 450
   PointsToAddToPlayer: 10
   health: 1
