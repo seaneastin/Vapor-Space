@@ -27,6 +27,7 @@ public class PlayerBehavior : MonoBehaviour
             if (lives > 0)
             {
                 lives--;
+                health++;
             }
             else if(lives <= 0)
             {

@@ -93,5 +93,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupTime: 10
-  changedshotspeed: 2244.76
-  changedfirerate: 0.1
+  changedshotspeed: 550
+  changedfirerate: 0.2

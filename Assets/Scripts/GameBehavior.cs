@@ -6,8 +6,7 @@ public class GameBehavior : MonoBehaviour
 {
     public GameObject[] enemies;
     public SpawnerBehavior spawner;
-    public GameObject finishedroundmenu;
-    public GameObject shoptext;
+    public GameObject finishedroundmenu;    
     public GameObject gotoshopbutton;
     public GameObject UI;
     public GameObject gameOver;
@@ -26,7 +25,7 @@ public class GameBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isinround == true)
+        if (isinround == true && player.isplayerdead != true)
         {
             //replace this line with something more effiencent
             enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -50,15 +49,13 @@ public class GameBehavior : MonoBehaviour
                 }
                 if (roundstillshopshows <= 0)
                 {
-                    finishedroundmenu.SetActive(true);
-                    shoptext.SetActive(true);
+                    finishedroundmenu.SetActive(true);                    
                     gotoshopbutton.SetActive(true);
                     roundstillshopshows = shopintervals;
                 }
                 else
                 {
-                    finishedroundmenu.SetActive(true);
-                    shoptext.SetActive(false);
+                    finishedroundmenu.SetActive(true);                    
                     gotoshopbutton.SetActive(false);
 
                 }

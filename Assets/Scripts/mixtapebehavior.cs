@@ -36,8 +36,8 @@ public class MixtapeBehavior : MonoBehaviour
             foreach (GameObject playership in playerships)
             {
                 PlayerController playerController = playership.GetComponent<PlayerController>();
-                playerController.fireRate = changedfirerate;
-                playerController.shotSpeed = changedshotspeed;
+                playerController.fireRate = originalfirerate;
+                playerController.shotSpeed = originalshotspeed;
             }
             GameObject.Destroy(this);
         }
