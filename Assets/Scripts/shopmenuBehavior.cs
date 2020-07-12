@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
+//using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 public class shopmenuBehavior : MonoBehaviour
@@ -26,6 +26,7 @@ public class shopmenuBehavior : MonoBehaviour
     {
         head_animation = Head.GetComponent<Animator>();
         hellotextboxes[Random.Range(0, hellotextboxes.Length)].SetActive(true);
+        shopkeeperwelcomeanim();
     }
 
     // Update is called once per frame
@@ -115,7 +116,7 @@ public class shopmenuBehavior : MonoBehaviour
 
     public void shopkeeperwelcomeanim()
     {
-        //head_animation.SetTrigger("Welcome");
+        head_animation.SetTrigger("Welcome");
     }
 
 }

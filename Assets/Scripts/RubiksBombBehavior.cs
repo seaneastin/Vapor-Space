@@ -8,8 +8,7 @@ public class RubiksBombBehavior : MonoBehaviour
     public GameObject rubiksbombexplode;
     public float speed;
     Animator rubiksbombsolveanim;
-    Animator rubiksbombexplodeanim;
-    public GameObject explosionparticle;
+    Animator rubiksbombexplodeanim;    
     GameObject[] enemies;
     CharacterController characterController;
     // Start is called before the first frame update
@@ -17,8 +16,7 @@ public class RubiksBombBehavior : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         rubiksbombsolveanim = rubiksbombsolve.GetComponent<Animator>();
-        rubiksbombexplodeanim = rubiksbombexplode.GetComponent<Animator>();
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        rubiksbombexplodeanim = rubiksbombexplode.GetComponent<Animator>();        
     }  
 
     // Update is called once per frame
@@ -31,14 +29,14 @@ public class RubiksBombBehavior : MonoBehaviour
             if (rubiksbombsolveanim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
             rubiksbombsolve.SetActive(false);
-            rubiksbombexplode.SetActive(true);
-            explosionparticle.SetActive(true);
+            rubiksbombexplode.SetActive(true);            
         }
 
         if (rubiksbombexplodeanim.GetCurrentAnimatorStateInfo(0).IsName("Explode"))
         {
             if (rubiksbombexplodeanim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
             {
+                GetEnemies();
                 foreach (GameObject enemy in enemies)
                 {
                     EnemyBehavior enemyBehavior;
@@ -49,5 +47,10 @@ public class RubiksBombBehavior : MonoBehaviour
                 Object.Destroy(gameObject);
             }
         }
+    }
+
+    private void GetEnemies()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 }
