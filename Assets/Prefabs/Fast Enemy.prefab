@@ -121,10 +121,10 @@ GameObject:
   - component: {fileID: 5818595401878786318}
   - component: {fileID: 7252359112305533131}
   - component: {fileID: 1041874297254831942}
-  - component: {fileID: 8423766461004579608}
+  - component: {fileID: 5436655433087574330}
   m_Layer: 0
   m_Name: Fast Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,7 +209,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8423766461004579608
+--- !u!114 &5436655433087574330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,15 +218,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5035320217627019744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bac96b091244c1a429501dcaa57315f4, type: 3}
+  m_Script: {fileID: 11500000, guid: d39788eb7db0662469531f18d2a63af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1041874297254831942}
-  movementSpeed: 5
+  movementSpeed: 8
   movementRange: 4
-  projectile: {fileID: 4471774385135185484}
-  shotTime: 300
-  shotSpeed: 50
+  projectile: {fileID: 0}
+  shotTime: 50
+  shotSpeed: 3
   PointsToAddToPlayer: 0
   player: {fileID: 0}
   health: 1

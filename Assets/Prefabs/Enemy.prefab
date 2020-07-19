@@ -229,4 +229,4 @@ MonoBehaviour:
   shotSpeed: 50
   PointsToAddToPlayer: 0
   player: {fileID: 0}
-  health: 1
+  health: 4
