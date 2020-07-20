@@ -1,10 +1,9 @@
-﻿using JetBrains.Annotations;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class EnemyBehavior : MonoBehaviour
+public class FastEnemyBehavior : MonoBehaviour
 {
     public CharacterController controller;
     public float movementSpeed;
@@ -27,6 +26,8 @@ public class EnemyBehavior : MonoBehaviour
     {
         shotInterval = shotTime;
         tether = transform.position;
+        // this ignores literally every other function when it's placed before everything
+        // because it gives null reference exceptions when testing
         player = GameObject.FindGameObjectWithTag("MainShip").GetComponent<PlayerBehavior>();
     }
 
@@ -59,6 +60,8 @@ public class EnemyBehavior : MonoBehaviour
                 break;
         }
 
+        movementDirection.y += Mathf.Sin(Time.time  * 10f) * 5f;
+
         controller.Move(movementDirection * Time.deltaTime);
 
         //check to see if the delay has passed before firing a shot
@@ -72,6 +75,7 @@ public class EnemyBehavior : MonoBehaviour
 
     void ShootBullet()
     {
+        Debug.Log("Shot should fire.");
         GameObject shot = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
         shot.GetComponent<Rigidbody>().AddForce(-(transform.up) * shotSpeed, ForceMode.Force);
         Debug.Log("Shot should move forward");

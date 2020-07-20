@@ -10,7 +10,7 @@ public class SpawnerBehavior : MonoBehaviour
     public int spawnedEnemyTotal;
     public int maxSpawnedEnemiesTotal;
 
-    public GameObject[] spawnables;
+    public GameObject[] spawnables = new GameObject[3];
 
     // Start is called before the first frame update
     void Start()
@@ -25,25 +25,28 @@ public class SpawnerBehavior : MonoBehaviour
         if (spawnDelay == 0 && spawnedEnemyTotal < maxSpawnedEnemiesTotal)
         {
             spawnDelay = spawnTimer;
-            int g = Random.Range(0, (spawnables.Length - 1));
-            Instantiate(spawnables[g], transform.position, new Quaternion(90.0f, 0.0f, 0.0f, -90.0f));
+            int g = Random.Range(1, 11);
+            int selectedObjectInArray;
+            if (g >= 1 && g <= 6)
+            {
+                Instantiate(spawnables[0], transform.position, new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
+            }
+            else if (g >=7 && g <= 9)
+            {
+                Instantiate(spawnables[1], transform.position, new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
+            }
+            else if (g == 10)
+            {
+                Instantiate(spawnables[2], transform.position, new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
+            }
             spawnedEnemyTotal++;
             RandomizePosition();
         }
-        if(spawnDelay != 0)
-        {
-            spawnDelay--;
-        }        
+        spawnDelay--;
     }
 
     void RandomizePosition()
     {
-        Vector3 oldSpawn = transform.position;
-        transform.position = new Vector3(Random.Range(-3.9f, 3.9f), Random.Range(2.0f, 6.0f), 0.0f);
-
-        if ((oldSpawn - transform.position).magnitude <= 3)
-        {
-            RandomizePosition();
-        }
+        transform.position = new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f), 0.0f);
     }
 }

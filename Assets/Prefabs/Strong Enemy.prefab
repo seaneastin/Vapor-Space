@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9028586721504424786}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: EnemyProjectile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,10 +123,9 @@ GameObject:
   - component: {fileID: 588329336289538017}
   - component: {fileID: 1027375360789862233}
   - component: {fileID: 6917041471646530859}
-  - component: {fileID: 4872052541759781817}
   m_Layer: 0
   m_Name: Strong Enemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,24 +235,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac96b091244c1a429501dcaa57315f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 1027375360789862233}
   movementSpeed: 1
-  movementRange: 15.03
+  movementRange: 4
   projectile: {fileID: 549746972491377863}
-  shotTime: 200
+  shotTime: 40
   shotSpeed: 70
-  PointsToAddToPlayer: 30
-  health: 3
---- !u!65 &4872052541759781817
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071774537503839792}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 1, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
+  PointsToAddToPlayer: 0
+  player: {fileID: 0}
+  health: 10
