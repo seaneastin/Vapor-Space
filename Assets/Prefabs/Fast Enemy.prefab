@@ -224,9 +224,9 @@ MonoBehaviour:
   controller: {fileID: 1041874297254831942}
   movementSpeed: 8
   movementRange: 4
-  projectile: {fileID: 0}
-  shotTime: 50
-  shotSpeed: 3
+  projectile: {fileID: 4471774385135185484}
+  shotTime: 130
+  shotSpeed: 200
   PointsToAddToPlayer: 0
   player: {fileID: 0}
   health: 1

@@ -25,9 +25,9 @@ public class EnemyBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("MainShip").GetComponent<PlayerBehavior>();
         shotInterval = shotTime;
         tether = transform.position;
+        player = GameObject.FindGameObjectWithTag("MainShip").GetComponent<PlayerBehavior>();
     }
 
     // Update is called once per frame
@@ -61,6 +61,7 @@ public class EnemyBehavior : MonoBehaviour
 
         controller.Move(movementDirection * Time.deltaTime);
 
+        //check to see if the delay has passed before firing a shot
         shotInterval--;
         if (shotInterval == 0)
         {

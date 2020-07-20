@@ -222,11 +222,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 7337811555382451519}
-  movementSpeed: 2
+  movementSpeed: 4
   movementRange: 4
   projectile: {fileID: 7337811553499105602}
-  shotTime: 300
-  shotSpeed: 50
+  shotTime: 200
+  shotSpeed: 200
   PointsToAddToPlayer: 0
   player: {fileID: 0}
   health: 4

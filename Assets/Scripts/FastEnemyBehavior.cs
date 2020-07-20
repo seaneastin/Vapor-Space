@@ -24,9 +24,11 @@ public class FastEnemyBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("MainShip").GetComponent<PlayerBehavior>();
         shotInterval = shotTime;
         tether = transform.position;
+        // this ignores literally every other function when it's placed before everything
+        // because it gives null reference exceptions when testing
+        player = GameObject.FindGameObjectWithTag("MainShip").GetComponent<PlayerBehavior>();
     }
 
     // Update is called once per frame
@@ -58,10 +60,11 @@ public class FastEnemyBehavior : MonoBehaviour
                 break;
         }
 
-        movementDirection.y += Mathf.Sin(Time.time) * 1.3f;
+        movementDirection.y += Mathf.Sin(Time.time  * 10f) * 5f;
 
         controller.Move(movementDirection * Time.deltaTime);
 
+        //check to see if the delay has passed before firing a shot
         shotInterval--;
         if (shotInterval == 0)
         {
@@ -72,6 +75,7 @@ public class FastEnemyBehavior : MonoBehaviour
 
     void ShootBullet()
     {
+        Debug.Log("Shot should fire.");
         GameObject shot = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
         shot.GetComponent<Rigidbody>().AddForce(-(transform.up) * shotSpeed, ForceMode.Force);
         Debug.Log("Shot should move forward");

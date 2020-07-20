@@ -235,11 +235,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac96b091244c1a429501dcaa57315f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 1027375360789862233}
   movementSpeed: 1
   movementRange: 4
   projectile: {fileID: 549746972491377863}
-  shotTime: 200
+  shotTime: 40
   shotSpeed: 70
   PointsToAddToPlayer: 0
   player: {fileID: 0}
